@@ -17,15 +17,18 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.StreamRecorder
-        MARKETING_VERSION: 1.0.0
-        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: "1.1.0"
+        CURRENT_PROJECT_VERSION: "2"
         GENERATE_INFOPLIST_FILE: true
-        INFOPLIST_KEY_CFBundleDisplayName: Stream Recorder
+        INFOPLIST_KEY_CFBundleDisplayName: Broadcast Keep
+        PRODUCT_NAME: "Broadcast Keep"
+        PRODUCT_MODULE_NAME: StreamRecorder
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.video
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ENABLE_APP_SANDBOX: false
         ENABLE_HARDENED_RUNTIME: true
-        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
   StreamRecorderTests:
     type: bundle.unit-test
     platform: macOS
@@ -36,6 +39,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.StreamRecorderTests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Broadcast Keep.app/Contents/MacOS/Broadcast Keep"
         GENERATE_INFOPLIST_FILE: true
 schemes:
   StreamRecorder:

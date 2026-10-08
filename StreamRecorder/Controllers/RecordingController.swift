@@ -422,7 +422,7 @@ final class RecordingController: ObservableObject {
 
     private static func friendlyMessage(for error: Error) -> String {
         if let cocoaError = error as? CocoaError, cocoaError.code == .fileWriteNoPermission {
-            return "Stream Recorder cannot write to the selected folder. Choose another destination."
+            return "Broadcast Keep cannot write to the selected folder. Choose another destination."
         }
         return "Could not start recording: \(error.localizedDescription)"
     }

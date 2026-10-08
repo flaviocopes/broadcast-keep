@@ -12,7 +12,7 @@ enum StreamURLValidationError: LocalizedError, Equatable {
         case .malformed:
             "That does not look like a complete web URL."
         case .unsupportedHost:
-            "Stream Recorder currently supports YouTube URLs only."
+            "Broadcast Keep currently supports YouTube URLs only."
         }
     }
 }

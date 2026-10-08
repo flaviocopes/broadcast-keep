@@ -1,18 +1,20 @@
-# Livestream Recorder
+# Broadcast Keep
 
-Livestream Recorder is a native macOS app for saving live YouTube streams as local MP4 files. Paste a livestream URL, record from the current point or catch up from the available beginning, follow progress in a focused SwiftUI interface, and let the app merge and verify the final recording.
+Broadcast Keep is a native macOS app for saving live YouTube streams as local MP4 files. Paste a livestream URL, record from the current point or catch up from the available beginning, follow progress in a focused SwiftUI interface, and let the app merge and verify the final recording.
 
-This is one of the software packages I publish with full source. The landing page is https://flaviocopes.com/software/livestream-recorder/.
+This is one of the software packages I publish with full source. The landing page is https://flaviocopes.com/broadcast-keep/.
 
 The code is MIT licensed. You are free to use it, fork it and change it, also commercially.
 
-There is no support. Issues, pull requests, discussions, and the wiki are turned off, and there is no roadmap. Forks are welcome.
+There is no support or roadmap. You can report bugs through GitHub issues. Forks are welcome.
 
 Record only streams you are authorized to save. Review YouTube's terms and applicable copyright law for your use.
 
 If you point a coding agent at this repository, have it read `AGENTS.md` first.
 
-Current release: **1.0** (`1.0.0` in the Xcode project). See the [Changelog](#changelog) for release notes.
+Download `Broadcast Keep-1.1.0.zip` from the [latest release](https://github.com/flaviocopes/broadcast-keep/releases/latest). Unzip it and drag Broadcast Keep to your Applications folder. It runs on Apple silicon and Intel Macs.
+
+Current release: **1.1** (`1.1.0` in the Xcode project). See the [Changelog](#changelog) for release notes.
 
 The Swift implementation is a working reference, not a platform limit. Its recording workflow, process management, parsing, finalization, and tests can be rewritten as a Windows or Linux desktop program, a CLI, a web-controlled service, or another interface with an AI coding agent.
 
@@ -92,7 +94,7 @@ Read the [Architecture](#architecture) section for the runtime flow, and `AGENTS
 
 ### Overview
 
-Livestream Recorder is a native SwiftUI macOS application that coordinates command-line media tools. The interface collects recording preferences and a YouTube livestream URL. `RecordingController` validates the destination, launches `yt-dlp` directly with structured arguments, consumes machine-readable progress markers, tracks media duration with ffprobe, and asks FFmpeg to produce a verified MP4.
+Broadcast Keep is a native SwiftUI macOS application that coordinates command-line media tools. The interface collects recording preferences and a YouTube livestream URL. `RecordingController` validates the destination, launches `yt-dlp` directly with structured arguments, consumes machine-readable progress markers, tracks media duration with ffprobe, and asks FFmpeg to produce a verified MP4.
 
 There is no database, backend, account system, analytics service, or embedded API credential.
 
@@ -173,7 +175,7 @@ xcodebuild -project StreamRecorder.xcodeproj \
   build CODE_SIGNING_ALLOWED=NO
 ```
 
-The unsigned local result is under `DerivedData/Build/Products/Release/StreamRecorder.app`. `DerivedData/` is gitignored. Do not commit it.
+The unsigned local result is under `DerivedData/Build/Products/Release/Broadcast Keep.app`. `DerivedData/` is gitignored. Do not commit it.
 
 ### Regenerate the Xcode project
 
@@ -218,7 +220,7 @@ The browser picker maps to `yt-dlp --cookies-from-browser`. You must already be 
 
 ### App identity and signing
 
-This repository uses the placeholder bundle identifiers `com.example.StreamRecorder` and `com.example.StreamRecorderTests`. Replace these in both `project.yml` and the Xcode project before signing or distributing the app. Select your own Apple Developer team and review hardened-runtime, sandbox, entitlement, notarization, and update choices for your distribution model.
+This repository uses the placeholder bundle identifiers `com.example.StreamRecorder` and `com.example.StreamRecorderTests`. The published app keeps these identifiers so existing preferences continue working. For your own fork, choose different identifiers. Select your own Apple Developer team and review hardened-runtime, sandbox, entitlement, notarization, and update choices for your distribution model.
 
 ### Command behavior
 
@@ -226,7 +228,7 @@ Recording flags and output naming live in `YTDLPCommandBuilder.swift`. Treat cha
 
 ## Distribution
 
-Livestream Recorder is a desktop app, so distribution means building, signing, notarizing, and delivering a macOS application rather than deploying a server.
+Broadcast Keep is a desktop app, so distribution means building, signing, notarizing, and delivering a macOS application rather than deploying a server.
 
 ### Personal local build
 
@@ -242,7 +244,7 @@ Open `StreamRecorder.xcodeproj`, select the `StreamRecorder` scheme, and run it 
 6. Notarize the archive with your Apple Developer account.
 7. Test the final artifact on a clean Mac without developer tools.
 
-This repository does not contain signing certificates, provisioning data, notarization credentials, or a prebuilt application.
+The source contains no signing credentials. Build the universal zip with `scripts/build-release.sh`. With the Developer ID certificate and the `notary` profile, the script signs and notarizes it. Without the certificate, it builds an ad-hoc signed local copy.
 
 ### Later releases
 
@@ -364,7 +366,12 @@ Pure unit tests cover validation, parsing, state, and command generation. FFmpeg
 
 ## Changelog
 
-All notable changes to Livestream Recorder are recorded here. Versions follow semantic versioning; the public-facing release label may omit the patch number.
+All notable changes to Broadcast Keep are recorded here. Versions follow semantic versioning; the public-facing release label may omit the patch number.
+
+### 1.1.0 - 2026-10-08
+
+- Renamed the app to Broadcast Keep. Existing preferences stay available.
+- Added a universal Mac release build script.
 
 ### 1.0.0 - 2026-08-01
 

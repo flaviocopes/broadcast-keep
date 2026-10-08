@@ -1,8 +1,8 @@
-# Agent guide for Livestream Recorder
+# Agent guide for Broadcast Keep
 
 ## Objective
 
-Help build, customize, or port Livestream Recorder while preserving reliable process control, continuous media output, clear failure states, and safe handling of browser sessions.
+Help build, customize, or port Broadcast Keep while preserving reliable process control, continuous media output, clear failure states, and safe handling of browser sessions.
 
 ## Start here
 
@@ -36,7 +36,7 @@ Tests that invoke FFmpeg or ffprobe skip when those tools are unavailable. Insta
 - Update unit tests when changing command flags, output markers, state transitions, file naming, or finalization.
 - Treat SwiftUI and macOS as replaceable delivery choices. Preserve behavior and trust boundaries when porting to Windows, Linux, or a CLI.
 - Treat `1.0.0` as the initial public release. For every later release, update the Xcode and XcodeGen versions, the tests, and the README (including its Changelog section) together.
-- Keep the placeholder bundle identifiers `com.example.StreamRecorder` and `com.example.StreamRecorderTests` unless the task is to rebrand or sign the app.
+- Keep `com.example.StreamRecorder` and `com.example.StreamRecorderTests` stable so existing preferences keep working. Public release builds come from `scripts/build-release.sh`, which signs with the Developer ID and notarizes with the `notary` profile.
 
 ## Useful task prompts
 

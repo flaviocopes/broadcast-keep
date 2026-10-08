@@ -72,7 +72,7 @@ struct ContentView: View {
             .frame(width: 42, height: 42)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text("Stream Recorder")
+                Text("Broadcast Keep")
                     .font(.title2.weight(.semibold))
                 Text("Save a live YouTube stream to your Mac")
                     .font(.subheadline)
