@@ -12,7 +12,7 @@ Record only streams you are authorized to save. Review YouTube's terms and appli
 
 If you point a coding agent at this repository, have it read `AGENTS.md` first.
 
-Download `Broadcast Keep-1.1.0.zip` from the [latest release](https://github.com/flaviocopes/broadcast-keep/releases/latest). Unzip it and drag Broadcast Keep to your Applications folder. It runs on Apple silicon and Intel Macs.
+Download `Broadcast-Keep-1.1.0.zip` from the [latest release](https://github.com/flaviocopes/broadcast-keep/releases/latest). Unzip it and drag Broadcast Keep to your Applications folder. It runs on Apple silicon and Intel Macs.
 
 Current release: **1.1** (`1.1.0` in the Xcode project). See the [Changelog](#changelog) for release notes.
 
