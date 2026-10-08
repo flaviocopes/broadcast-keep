@@ -2,7 +2,7 @@
 
 Broadcast Keep is a native macOS app for saving live YouTube streams as local MP4 files. Paste a livestream URL, record from the current point or catch up from the available beginning, follow progress in a focused SwiftUI interface, and let the app merge and verify the final recording.
 
-This is one of the software packages I publish with full source. The landing page is https://flaviocopes.com/broadcast-keep/.
+This is one of the software packages I publish with full source. You can find my other apps at https://flaviocopes.com/products/.
 
 The code is MIT licensed. You are free to use it, fork it and change it, also commercially.
 
